@@ -1,0 +1,189 @@
+
+/* mobile styles */
+
+form#studentinfo {
+	background: RGB(225,39,39);
+}
+
+.quiz {
+	background: RGB(225, 39, 39);
+	}
+
+.infoPage {
+	background: RGB(225, 39, 39);
+	}
+
+.homepage {
+	background: RGB(225,39,39);
+	}
+
+.homepage nav {
+	background: rgb(241, 162, 56);
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888;
+	display: block;
+	/*margin: 8px 22px 8px 22px;*/
+	overflow: hidden;
+	text-align: center;
+	width: 100%; 
+}	
+
+.homepage body{
+	text-align: center;
+	}
+
+.homepage ul, li {
+	list-style-type:none;
+	}
+
+.homepage #titleText {
+	text-align:center;
+	}
+
+h1, p {
+    color: #FFFF33;
+    *text-align: center;
+    }
+    
+    
+    
+    a.Graduate {
+    display: none;
+    }
+    
+    input:required {
+    background:hsl(180, 50%, 90%);
+    border:1px solid #999;
+}
+
+input:valid,
+input:in-range {
+    background:hsl(120, 50%, 90%);
+    border-color:hsl(120, 50%, 50%);
+}
+
+input:invalid,
+input:out-of-range {
+    border-color:hsl(0, 50%, 50%);
+    background:hsl(0, 50%, 90%);
+}
+    
+    #bodyContent li:before {
+	display: block;
+	position: relative;
+	max-width: 0px;
+	max-height: 0px;
+	color: #EE300C;
+	content:'\2022';
+	font-size: 26px;
+	left: -.5em;
+	top: 0;
+}
+    
+ form#studentinfo fieldset {
+    background: RGB(225,39,39);
+	border: none;
+	font-size: 16px;
+	font-weight: normal;
+	width: 100px;
+}
+
+form#studentinfo {
+	text-align: center;
+	}
+
+form#studentinfo fieldset p{
+  	margin: 0 auto;
+  	text-align: left;
+	clear: both;
+	padding: 5px;
+	}
+
+form#studentinfo legend {
+    background: RGB(225,39,39);
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+   
+form#studentinfo ol li {
+	*background: #FF8A6C;
+	background: rgb(241, 162, 56);
+	border-color: #e3ebc3;
+	border-color: rgba(255,255,255,.6);
+}
+
+form#studentinfo ol ol li {
+	background: rgb(231,98,42);
+	border: none;
+	float: none;
+}
+
+form#studentinfo label {
+    color: RGB(255,255,255);
+	*float: left;
+    font-weight: bold;
+	*width: 200px;
+}
+    
+  form#studentinfo button {
+	background: RGB(235,138,39);
+	border: none;
+	display: block;
+	font: 18px Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 1px;
+	margin: auto;
+	text-transform: uppercase;
+
+}
+
+form#studentinfo button:hover {
+	background: #A62100;
+	cursor: pointer;
+}
+    
+
+@media handheld {
+
+
+	html, body {
+		font: 12px/15px sans-serif;
+		background: RGB(225, 39, 39);
+		padding: 3px;
+		*color: #000;
+		margin: 0;
+		}
+	#sidebar, #footer {
+		display: none;
+		}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		}
+	#content img { 
+		max-width: 250px;
+		}
+	.center {
+		width: 100% !important;
+		text-align: center;
+		}
+	a:link, a:visited {
+		text-decoration: underline;
+		color: #0000CC;
+		}
+	a:hover, a:active {
+		text-decoration: underline;
+		color: #660066;
+		}
+
+}
+/* iPhone-specific styles */
+@media only screen and (max-device-width: 480px) { 
+
+	html {
+		-webkit-text-size-adjust: none;
+		}
+
+}

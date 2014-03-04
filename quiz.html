@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="quiz">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>HTML</title>
+		<meta name="description" content="">
+		<meta name="author" content="Diane Ramsay">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<link rel="stylesheet" type="text/css" href="handheld.css" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>Skills Checker</h1>
+				<p>
+					The following questions have been chosen to assess your technical skills and adivse you on a suitable job role.
+				</p>
+			</header>
+			<form action="quizAnswers.php" method="post" id="quiz">
+
+				<H2>Application Development</H2>
+				<li>
+					<h3>1. What type of programming language is Java?</h3>
+					<div>
+						<input type="radio" name="AD_q1" id="AD_q1a1" value="A" />
+						<label for="AD_q1a1">A) Event-driven language </label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q1" id="AD_q1a2" value="B" />
+						<label for="AD_q1a2">B) Object-Oriented language</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q1" id="AD_q1a3" value="C" />
+						<label for="AD_q1a3">C) Functional language</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q1" id="AD_q1a4" value="D" />
+						<label for="AD_q1a4">D) Machine language</label>
+					</div>
+				</li>
+
+				<li>
+					<h3>1. What does TDD stand for? </h3>
+					<div>
+						<input type="radio" name="AD_q2" id="AD_q2a1" value="A" />
+						<label for="AD_q2a1">A) Text Document Development </label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q2" id="AD_q2a2" value="B" />
+						<label for="AD_q2a2">B) Time Driven Development</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q2" id="AD_q2a3" value="C" />
+						<label for="AD_q2a3">C) Test Driven Development</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q2" id="AD_q2a4" value="D" />
+						<label for="AD_q2a4">D) Track Data Development</label>
+					</div>
+				</li>
+
+				<li>
+					<h3>1. Which one of the following is NOT a software development methodology? </h3>
+					<div>
+						<input type="radio" name="AD_q3" id="AD_q3a1" value="A" />
+						<label for="AD_q3a1">A) Agile </label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q3" id="AD_q3a2" value="B" />
+						<label for="AD_q3a2">B) Waterfall</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q3" id="AD_q3a3" value="C" />
+						<label for="AD_q3a3">C) Incremental</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q3" id="AD_q3a4" value="D" />
+						<label for="AD_q3a4">D) Flexible</label>
+					</div>
+				</li>
+
+				<li>
+					<h3>1. Which of the following is NOT part of object oriented programming? </h3>
+					<div>
+						<input type="radio" name="AD_q4" id="AD_q4a1" value="A" />
+						<label for="AD_q4a1">A) Functions </label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q4" id="AD_q4a2" value="B" />
+						<label for="AD_q4a2">B) Inheritance</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q4" id="AD_q4a3" value="C" />
+						<label for="AD_q4a3">C) Classes</label>
+					</div>
+
+					<div>
+						<input type="radio" name="AD_q4" id="AD_q4a4" value="D" />
+						<label for="AD_q4a4">D) Objects</label>
+					</div>
+				</li>
+
+				<h2>Systems Architecture</h2>
+
+				<li>
+					<h3>1. What does TCP break data into? </h3>
+					<div>
+						<input type="radio" name="SA_q1" id="SA_q1a1" value="A" />
+						<label for="SA_q1a1">A) Packets </label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q1" id="SA_q1a2" value="B" />
+						<label for="SA_q1a2">B) Files</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q1" id="SA_q1a3" value="C" />
+						<label for="SA_q1a3">C) Bits</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q1" id="SA_q1a4" value="D" />
+						<label for="SA_q1a4">D) Binary</label>
+					</div>
+				</li>
+
+				<li>
+					<h3>2. Thrashing... </h3>
+					<div>
+						<input type="radio" name="SA_q2" id="SA_q2a1" value="A" />
+						<label for="SA_q2a1">A) is a natural consequence of virtual memory systems </label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q2" id="SA_q2a2" value="B" />
+						<label for="SA_q2a2">B) can always be avoided by swapping</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q2" id="SA_q2a3" value="C" />
+						<label for="SA_q2a3">C)  always occurs on large computers</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q2" id="SA_q2a4" value="D" />
+						<label for="SA_q2a4">D) can be caused by poor paging algorithms</label>
+					</div>
+				</li>
+
+				<li>
+					<h3>3. The Memory Address Register </h3>
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a1" value="A" />
+						<label for="SA_q3a1">A) is a hardware memory device which denotes the location of the current instruction being executed.</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a2" value="B" />
+						<label for="SA_q3a2">B) is a group of electrical circuits (hardware), that performs the intent of instructions fetched from memory.</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a3" value="C" />
+						<label for="SA_q3a3">C) contains the address of the memory location that is to be read from or stored into.</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a4" value="D" />
+						<label for="SA_q3a4">D) contains a copy of the designated memory location specified by the MAR after a "read" or the new contents of the memory prior to a "write".</label>
+					</div>
+				</li>
+				
+						<li>
+					<h3>3. The Memory Address Register </h3>
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a1" value="A" />
+						<label for="SA_q3a1">A) is a hardware memory device which denotes the location of the current instruction being executed.</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a2" value="B" />
+						<label for="SA_q3a2">B) is a group of electrical circuits (hardware), that performs the intent of instructions fetched from memory.</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a3" value="C" />
+						<label for="SA_q3a3">C) contains the address of the memory location that is to be read from or stored into.</label>
+					</div>
+
+					<div>
+						<input type="radio" name="SA_q3" id="SA_q3a4" value="D" />
+						<label for="SA_q3a4">D) contains a copy of the designated memory location specified by the MAR after a "read" or the new contents of the memory prior to a "write".</label>
+					</div>
+				</li>
+
+				<h2> Business Analyst Questions</h2>
+				<li>
+					<h3> 1. The approach used in top-down analysis and design is</h3>
+
+					<div>
+						<input type="radio" name="question-8-answers" id="question-8-answers-A" value="A" />
+						<label for="question-8-answers-A">A) to identify a top level function an d then create a hierarchy of lower-level modules and components</label>
+					</div>
+
+					<div>
+						<input type="radio" name="question-8-answers" id="question-8-answers-B" value="B" />
+						<label for="question-8-answers-B">B) to prepare flow charts after programming has been completed</label>
+					</div>
+
+					<div>
+						<input type="radio" name="question-8-answers" id="question-8-answers-C" value="C" />
+						<label for="question-8-answers-C">C)to identify the top level functions by combining many smaller components into a single entity</label>
+					</div>
+
+					<div>
+						<input type="radio" name="question-8-answers" id="question-8-answers-D" value="D" />
+						<label for="question-8-answers-D">D) all of the above</label>
+					</div>
+				</li>
+
+			</form>
+
+			<div>
+				<input type="submit" value="Submit Quiz" />
+			</div>
+
+			<footer>
+				<p>
+					<a href= "index.html">Back To Homepage</a>
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
