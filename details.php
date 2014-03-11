@@ -82,7 +82,7 @@ function populateDB_success() {
 function populateDB(tx) {
 	$('#busy').show();
 
-    tx.executeSql("INSERT INTO studentDetails (ID,full_name,email,phone_number,university,degree,course,year,preferred_scheme) VALUES ('$name', '$email', '$email', '$university', '$degree', '$course', '$year', '$scheme')");
+    tx.executeSql("INSERT INTO studentDetails (full_name,email,phone_number,university,degree,course,year,preferred_scheme) VALUES ('$name', '$email', '$email', '$university', '$degree', '$course', '$year', '$scheme')");
     
 }
 
