@@ -2,9 +2,9 @@
 
 echo "checking answers";
 
-if( isset($_POST['quiz']) ){
+if (count($_POST) > 0) {
 
-echo "checking answers";
+echo "checking answers after POST";
 
 $BAanswer1 = $_POST['BA_q1'];
 $BAanswer2 = $_POST['BA_q2'];
@@ -58,9 +58,11 @@ if ($SAanswer4 == "B") { $SAtotalCorrect++;
 }
 
 
-echo "<div id='results'>$BAtotalCorrect / 4 correct</div>";
+echo "$BAtotalCorrect / 4 correct";
 echo "<div id='results'>$ADtotalCorrect / 4 correct</div>";
 echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
+
+
 
 }
 ?>
@@ -102,22 +104,22 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 						<h3> 1. Which description best describes Top-Down design? </h3>
 
 						<div>
-							<input type="radio" name="BA_q1" id="BA_q1a1" value="A" />
+							<input type="radio" name="BA_q1" id="BA_q1a1" value="A" required />
 							<label for="BA_q1a1">A) to identify a top level function and then create a hierarchy of lower-level modules and components</label>
 						</div>
 
 						<div>
-							<input type="radio" name="BA_q1" id="BA_q1a2" value="B" />
+							<input type="radio" name="BA_q1" id="BA_q1a2" value="B" required/>
 							<label for="BA_q1a2">B) to prepare flow charts after programming has been completed</label>
 						</div>
 
 						<div>
-							<input type="radio" name="BA_q1" id="BA_q1a3" value="C" />
+							<input type="radio" name="BA_q1" id="BA_q1a3" value="C" required/>
 							<label for="BA_q1a3">C) to identify the top level functions by combining many smaller components into a single entity</label>
 						</div>
 
 						<div>
-							<input type="radio" name="BA_q1" id="BA_q1a4" value="D" />
+							<input type="radio" name="BA_q1" id="BA_q1a4" value="D" required/>
 							<label for="BA_q1a4">D) all of the above</label>
 						</div>
 					

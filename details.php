@@ -1,27 +1,27 @@
 <?php
-$host = "localhost";
-$username = "root";
-$pass = "";
+$host = "devweb2013.cis.strath.ac.uk";
+$username = "ylb10122";
+$pass = "hmeddlyn";
 
 $mydb = mysql_connect($host, $username, $pass);
 
-mysql_select_db("studentInfo", $mydb);
+mysql_select_db("ylb10122", $mydb);
 
 if (count($_POST) > 0) {
 
 	echo "Entering";
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$phone_number = $_POST['phonenumber'];
-	$university = $_POST['university'];
-	$degree = $_POST['degree'];
-	$course = $_POST['course'];
-	$year = $_POST['year'];
-	$scheme = $_POST['scheme'];
+	$name = mysql_real_escape_string($_POST['name']);
+	$email = mysql_real_escape_string($_POST['user_email']);
+	$phone_number = mysql_real_escape_string($_POST['phonenumber']);
+	$university = mysql_real_escape_string($_POST['university']);
+	$degree = mysql_real_escape_string($_POST['degree']);
+	$course = mysql_real_escape_string($_POST['course']);
+	$year = mysql_real_escape_string($_POST['year']);
+	$scheme = mysql_real_escape_string($_POST['scheme']);
 
-	$query = "INSERT INTO studentInfo VALUES (NULL,'" . mysql_real_escape_string($name) . "','" . mysql_real_escape_string($email) . "','" . mysql_real_escape_string($phone_number) . "','" . mysql_real_escape_string($university) . "','" . mysql_real_escape_string($degree) . "','" . mysql_real_escape_string($course) . "','" . mysql_real_escape_string($year) . "','" . mysql_real_escape_string($scheme) . ")";
+	//$query = "INSERT INTO studentInfo VALUES (NULL,'" . mysql_real_escape_string($name) . "','" . mysql_real_escape_string($email) . "','" . mysql_real_escape_string($phone_number) . "','" . mysql_real_escape_string($university) . "','" . mysql_real_escape_string($degree) . "','" . mysql_real_escape_string($course) . "','" . mysql_real_escape_string($year) . "','" . mysql_real_escape_string($scheme) . ")";
 
-	$query = "INSERT INTO studentInfo (full_name, email, phone_number, university, degree, course, year, preferred_scheme) VALUES ('$name', '$email', '$email', '$university', '$degree', '$course', '$year', '$scheme')";
+	$query = "INSERT INTO studentDetails (full_name, email, phone_number, university, degree, course, year, preferred_scheme) VALUES ('$name', '$email', '$phone_number', '$university', '$degree', '$course', '$year', '$scheme')";
 
 	$result = mysql_query($query);
 	header("location:index.html");
@@ -33,6 +33,7 @@ if (count($_POST) > 0) {
 	//close the connection
 }
 ?>
+
 
 <html class= "detailsForm">
 	<head>
@@ -49,46 +50,7 @@ if (count($_POST) > 0) {
 	</head>
 	<body>
 		
-		<script type="text/javascript" charset="utf-8">
-
-    var mydb;
-
-    // Wait for PhoneGap to connect with the device
-    function onLoad() {
-        document.addEventListener("deviceready",onDeviceReady,false);
-    }
-
-    // PhoneGap is ready to be used!
-
-    function onDeviceReady() {
-        console.log("it is in ondevice ready method..");
-    	db = window.openDatabase("ylb10122", "1.0", "Trial Database", 200000);
-    	if (dbCreated)
-    	console.log("table created");
-    	db.transaction(populateDB, transaction_error, populateDB_success);
-   	 	else alert("No database created");
-   }
-   
-   function transaction_error(tx, error) {
-	$('#busy').hide();
-    alert("Database Error: " + error);
-}
-
-function populateDB_success() {
-	dbCreated = true;
-	alert("database updated, no error");
-}
-
-function populateDB(tx) {
-	$('#busy').show();
-
-    tx.executeSql("INSERT INTO studentDetails (full_name,email,phone_number,university,degree,course,year,preferred_scheme) VALUES ('$name', '$email', '$email', '$university', '$degree', '$course', '$year', '$scheme')");
-    
-}
-
-</script>
-		
-		<form id=studentinfo class="app" action="details.php" method= "post"  >
+		<form id=studentinfo class="app" action="details.php" method= "post" >
 			<h1> JP Morgan Student Recuitment Application </h1>
 			<p>
 				Please enter the required information below. We will keep you informed of upcoming events.
