@@ -1,4 +1,3 @@
-
 /* mobile styles */
 
 form#studentinfo {
@@ -8,6 +7,36 @@ form#studentinfo {
 .quiz {
 	background: RGB(225, 39, 39);
 	}
+
+.quiz form#quiz h3 {
+	font-size: 16px;
+}
+
+.quiz form#quiz div {
+	color: #FFFF33;
+	font-size: 14px;
+}
+
+.quiz form#quiz fieldset {
+	background: RGB(225,39,39);
+	border: none;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.quiz form#quiz legend {
+    background: RGB(225,39,39);
+	color: #000000;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.quiz form#quiz ol li {
+	background: RGB(241, 162, 56);
+	border-color: #E3EBC3;
+}
+   
+
 
 .infoPage {
 	background: RGB(225, 39, 39);
@@ -87,7 +116,7 @@ input:out-of-range {
 	border: none;
 	font-size: 16px;
 	font-weight: normal;
-	width: 100px;
+	*width: 100px;
 }
 
 form#studentinfo {

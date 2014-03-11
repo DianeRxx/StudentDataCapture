@@ -69,9 +69,6 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 	<head>
 		<meta charset="utf-8">
 
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 		<title>HTML</title>
 		<meta name="description" content="">
@@ -80,7 +77,7 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 		<link rel="stylesheet" type="text/css" href="handheld.css" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	</head>
@@ -101,8 +98,8 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 						System Design and Analysis
 					</legend>
 
-					<li>
-						1. Which description best describes Top-Down design?
+					
+						<h3> 1. Which description best describes Top-Down design? </h3>
 
 						<div>
 							<input type="radio" name="BA_q1" id="BA_q1a1" value="A" />
@@ -123,9 +120,8 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 							<input type="radio" name="BA_q1" id="BA_q1a4" value="D" />
 							<label for="BA_q1a4">D) all of the above</label>
 						</div>
-					</li>
+					
 
-					<li>
 						<h3> 2. Which of the following statements is NOT true with respect to a use case? </h3>
 
 						<div>
@@ -147,7 +143,7 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 							<input type="radio" name="BA_q2" id="BA_q2a4" value="D" />
 							<label for="BA_q2a4">D) It represents the flow of activities of various processes in the system</label>
 						</div>
-					</li>
+					
 
 					<li>
 						<h3> 3. What is the testing of software WITHOUT the knowledge of source code called?</h3>

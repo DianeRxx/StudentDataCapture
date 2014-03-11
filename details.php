@@ -48,6 +48,46 @@ if (count($_POST) > 0) {
 		<title>JPMorgan Recruitment</title>
 	</head>
 	<body>
+		
+		<script type="text/javascript" charset="utf-8">
+
+    var mydb;
+
+    // Wait for PhoneGap to connect with the device
+    function onLoad() {
+        document.addEventListener("deviceready",onDeviceReady,false);
+    }
+
+    // PhoneGap is ready to be used!
+
+    function onDeviceReady() {
+        console.log("it is in ondevice ready method..");
+    	db = window.openDatabase("ylb10122", "1.0", "Trial Database", 200000);
+    	if (dbCreated)
+    	console.log("table created");
+    	db.transaction(populateDB, transaction_error, populateDB_success);
+   	 	else alert("No database created");
+   }
+   
+   function transaction_error(tx, error) {
+	$('#busy').hide();
+    alert("Database Error: " + error);
+}
+
+function populateDB_success() {
+	dbCreated = true;
+	alert("database updated, no error");
+}
+
+function populateDB(tx) {
+	$('#busy').show();
+
+    tx.executeSql("INSERT INTO studentDetails (ID,full_name,email,phone_number,university,degree,course,year,preferred_scheme) VALUES ('$name', '$email', '$email', '$university', '$degree', '$course', '$year', '$scheme')");
+    
+}
+
+</script>
+		
 		<form id=studentinfo class="app" action="details.php" method= "post"  >
 			<h1> JP Morgan Student Recuitment Application </h1>
 			<p>
