@@ -8,28 +8,34 @@
 }
 
 .quiz form#quiz div {
-	color: #FFFF33;
-	font-size: 14px;
+	color: #000000;
+	font-size: 16px;
 }
 
 .quiz form#quiz fieldset {
-	background: RGB(225,39,39);
+	background: RGB(241, 162, 56);
 	border: none;
+	color: #000000
 	font-size: 16px;
 	font-weight: normal;
 }
 
 .quiz form#quiz legend {
-	background: RGB(225,39,39);
+	background: rgb(241, 162, 56);
 	color: #000000;
 	font-size: 20px;
 	font-weight: bold;
+	text-align: none;
 }
 
-.quiz form#quiz ol li {
-	background: RGB(241, 162, 56);
-	border-color: #E3EBC3;
+
+
+form#quiz label {
+	color: #000000;
+	font-size: 14px;
+	font-weight: normal;
 }
+
 
 .infoPage {
 	background: RGB(225, 39, 39);
@@ -42,7 +48,7 @@
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 	color: #888;
 	display: block;
-	/*margin: 8px 22px 8px 22px;*/
+	list-style-type: none;
 	overflow: hidden;
 	text-align: center;
 	width: 100%;
@@ -63,15 +69,12 @@
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 	color: #888;
 	display: block;
-	/*margin: 8px 22px 8px 22px;*/
 	overflow: hidden;
-	*text-align: center;
+	text-align: center;
+	text-size: 16px;
 	width: 100%;
 }
 
-.homepage body {
-	text-align: center;
-}
 
 .homepage ul, li {
 	list-style-type: none;
@@ -117,64 +120,63 @@ input:invalid, input:out-of-range {
 	top: 0;
 }
 
+.detailsForm {
+	background: RGB(225, 39, 39);
+}
+
 form#studentinfo {
 	background: RGB(225,39,39);
 }
 
 form#studentinfo fieldset {
-	background: RGB(225,39,39);
+	background: rgb(241, 162, 56);
+	color: #000000;
 	border: none;
 	font-size: 16px;
 	font-weight: normal;
-	*width: 100px;
 }
 
-form#studentinfo {
-	text-align: center;
-}
-
-form#studentinfo fieldset p {
-	margin: 0 auto;
-	text-align: none;
-	clear: both;
-	padding: 5px;
-}
 
 form#studentinfo legend {
-	background: RGB(225,39,39);
-	color: #FFFFFF;
+	background: rgb(241, 162, 56);
+	color: #000000;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: none;
 }
 
-form#studentinfo ol li {
-	*background: #FF8A6C;
-	background: rgb(241, 162, 56);
-}
-
-*form#studentinfo ol ol li {
-	*	background: rgb(231,98,42);
-	*	border: none;
-	*	float: none;*}
-	form#studentinfo label {
-	color: RGB(255,255,255);
-	*float: left;
+	
+form#studentinfo label {
+	color: #000000;
 	font-weight: bold;
-	*width: 200px;
 }
 
-form#studentinfo button {
-	background: RGB(235,138,39);
-	border: none;
-	display: block;
-	font: 18px Georgia, "Times New Roman", Times, serif;
-	letter-spacing: 1px;
-	margin: auto;
-	text-transform: uppercase;
+form#studentinfo input, select, button {
+	  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For all Gecko based browsers */
+          box-sizing: border-box;
 }
 
-form#studentinfo button:hover {
-	background: #A62100;
+
+
+.button {
+    /*adjust the roundness*/
+    border-radius: 4px;
+    moz-border-radius: 4px;
+    webkit-border-radius: 4px;
+    /*adjust height and width*/
+     margin-left:auto;
+      margin-right:auto;
+    height: 40px;
+    width: 40px; 
+    /*change border colour*/
+    border:1px #245ec6 solid;
+}
+
+.button:hover {
+	border-radius: 4px;
+    moz-border-radius: 4px;
+    webkit-border-radius: 4px;
+	background: #808080;
 	cursor: pointer;
 }

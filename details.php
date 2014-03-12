@@ -33,7 +33,21 @@ if (count($_POST) > 0) {
 	//close the connection
 }
 ?>
-
+<script>
+function phonenumber(inputtxt)  
+{  
+  var phoneno = /^\d{11}$/;  
+  if(inputtxt.value.match(phoneno))  
+  {  
+      return true;  
+  }  
+  else  
+  {  
+     alert("Not a valid Phone Number");  
+     return false;  
+  }  
+  }
+</script>
 
 <html class= "detailsForm">
 	<head>
@@ -51,43 +65,57 @@ if (count($_POST) > 0) {
 	<body>
 		
 		<form id=studentinfo class="app" action="details.php" method= "post" >
-			<h1> JP Morgan Student Recuitment Application </h1>
+			<h1> JP Morgan <br> Student Recruitment Application </h1>
 			<p>
 				Please enter the required information below. We will keep you informed of upcoming events.
 			</p>
 			<p>
-				<button type="reset" value="Reset">
-					Reset
-				</button>
+				<button type="reset" value="Reset">Reset</button>
 			</p>
 			<fieldset>
 				<legend>
 					Contact Details
 				</legend>
-				Name:
-				<input type="text" name= "name" placeholder="James Morgan" required pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+">
+				
 				<br>
-				Email:
-				<input type="email" name= "user_email" placeholder="james@uni.com">
+				
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name" placeholder= "James Morgan" required>
+				
 				<br>
-				Phone Number:
-				<input type="number" name= "phonenumber" placeholder="07749751234" required>
-			</fieldset>
-
+				
+				<label for="email">Email:</label>
+				<input type="email" name="user_email" id="email" placeholder="james@uni.com"  required>
+				
+				<br>
+				
+				<label for="phonenumber">Phone Number:</label>
+				<input type="tel" name="phonenumber" id="phonenumber" placeholder="07123456789"  required>
+				</fieldset>
+			<br>
 			<fieldset>
 				<legend>
 					University Information
 				</legend>
-				University:
-				<input type="text" name="university" placeholder="University of Strathclyde" required>
+				
 				<br>
-				Degree:
-				<input type="text" name= "degree" placeholder="MEng" required>
+				
+				<label for="university">University:</label>
+				<input type="text" name="university" id="university" placeholder= "University of Strathclyde" required>
+				
 				<br>
-				Course:
-				<input type="text" name="course" placeholder="Computer Science" required>
+				
+				<label for="degree">Degree:</label>
+				<input type="text" name="degree" id="degree" placeholder= "MEng" required>
+				
 				<br>
-				Year of Study:
+				
+				<label for="course">Course:</label>
+				<input type="text" name="course" id="course" placeholder= "Computer Science" required>
+				
+				<br>
+				
+				<label for="year">Year of Study:</label>
 				<select id= "year" name= "year" required>
 					<option value= "1st">1st Year</option>
 					<option value = "2nd">2nd Year</option>
@@ -96,9 +124,12 @@ if (count($_POST) > 0) {
 					<option value= "5th">5th Year</option>
 				</select>
 			</fieldset>
-
+			
+			<br>
+			
 			<fieldset>
-				<label>Schemes Available</label>
+				<legend> Schemes Available in Technology</legend>
+				<label for="schemeSelection">Choose a scheme:</label>
 				<select id = "schemeSelection" name= "scheme" required>
 					<option value = "1">Technology Graduate Scheme</option>
 					<option value = "2">Spring Technology Week</option>
@@ -106,10 +137,10 @@ if (count($_POST) > 0) {
 					<option value = "4">Open Technology Position</option>
 				</select>
 			</fieldset>
-			<fieldset>
-				<input type="submit" value="Submit your details"/>
-
-			</fieldset>
+			
+			<br>
+			
+				<button type="submit" value="Submit" onclick="phonenumber(studentinfo.phonenumber)">Submit your Details </button>
 
 		</form>
 		<footer>

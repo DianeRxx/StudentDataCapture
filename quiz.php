@@ -195,7 +195,7 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 						</div>
 					</li>
 				</fieldset>
-
+				<br>
 				<fieldset>
 					<legend>
 						Software Development
@@ -292,7 +292,7 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 						</div>
 					</li>
 				</fieldset>
-
+				<br>
 				<fieldset>
 					<legend>
 						Systems Architecture
@@ -389,11 +389,11 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 						</div>
 					</li>
 				</fieldset>
-
+			<br>
 			</form>
 
 			<div>
-				<input type="submit" value="Submit Quiz" />
+				<button type="submit" value="Submit">Submit your Answers </button>
 			</div>
 
 			<footer>
