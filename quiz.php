@@ -1,71 +1,3 @@
-<?php
-
-echo "checking answers";
-
-if (count($_POST) > 0) {
-
-echo "checking answers after POST";
-
-$BAanswer1 = $_POST['BA_q1'];
-$BAanswer2 = $_POST['BA_q2'];
-$BAanswer3 = $_POST['BA_q3'];
-$BAanswer4 = $_POST['BA_q4'];
-
-$ADanswer1 = $_POST['AD_q1'];
-$ADanswer2 = $_POST['AD_q2'];
-$ADanswer3 = $_POST['AD_q3'];
-$ADanswer4 = $_POST['AD_q4'];
-
-$SAanswer1 = $_POST['SA_q1'];
-$SAanswer2 = $_POST['SA_q2'];
-$SAanswer3 = $_POST['SA_q3'];
-$SAanswer4 = $_POST['SA_q4'];
-
-//Checking answers for BA questions
-$BAtotalCorrect = 0;
-
-if ($BAanswer1 == "A") { $BAtotalCorrect++;
-}
-if ($BAanswer2 == "D") { $BAtotalCorrect++;
-}
-if ($BAanswer3 == "B") { $BAtotalCorrect++;
-}
-if ($BAanswer4 == "C") { $BAtotalCorrect++;
-}
-
-//Checking answers for AD questions
-$ADtotalCorrect = 0;
-
-if ($ADanswer1 == "B") { $ADtotalCorrect++;
-}
-if ($ADanswer2 == "C") { $ADtotalCorrect++;
-}
-if ($ADanswer3 == "D") { $ADtotalCorrect++;
-}
-if ($ADanswer4 == "A") { $ADtotalCorrect++;
-}
-
-//Checking answers for SA questions
-$SAtotalCorrect = 0;
-
-if ($SAanswer1 == "A") { $SAtotalCorrect++;
-}
-if ($SAanswer2 == "D") { $SAtotalCorrect++;
-}
-if ($SAanswer3 == "C") { $SAtotalCorrect++;
-}
-if ($SAanswer4 == "B") { $SAtotalCorrect++;
-}
-
-
-echo "$BAtotalCorrect / 4 correct";
-echo "<div id='results'>$ADtotalCorrect / 4 correct</div>";
-echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
-
-
-
-}
-?>
 
 <html lang="en" class="quiz">
 	<head>
@@ -93,7 +25,7 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 				</p>
 			</header>
 
-			<form class= "quiz" action="quiz.php" method="post" id="quiz">
+			<form class= "quiz" action="quizResults.php" method="post" id="quiz">
 
 				<fieldset>
 					<legend>
@@ -390,11 +322,13 @@ echo "<div id='results'>$SAtotalCorrect / 4 correct</div>";
 					</li>
 				</fieldset>
 			<br>
-			</form>
-
-			<div>
+			
+				<div>
 				<button type="submit" value="Submit">Submit your Answers </button>
 			</div>
+			</form>
+
+		
 
 			<footer>
 				<p>

@@ -19,11 +19,53 @@ if (count($_POST) > 0) {
 	$year = mysql_real_escape_string($_POST['year']);
 	$scheme = mysql_real_escape_string($_POST['scheme']);
 
-	//$query = "INSERT INTO studentInfo VALUES (NULL,'" . mysql_real_escape_string($name) . "','" . mysql_real_escape_string($email) . "','" . mysql_real_escape_string($phone_number) . "','" . mysql_real_escape_string($university) . "','" . mysql_real_escape_string($degree) . "','" . mysql_real_escape_string($course) . "','" . mysql_real_escape_string($year) . "','" . mysql_real_escape_string($scheme) . ")";
-
+	if ($scheme==1) {
+		$scheme= "Technology Graduate Scheme";
+	} else if ($scheme==2){
+		$scheme= "Spring Technology Week";
+	} else if ($scheme==3) {
+		$scheme = "Technology Internship";
+	} else $scheme= "Open Technology Position";
+					
 	$query = "INSERT INTO studentDetails (full_name, email, phone_number, university, degree, course, year, preferred_scheme) VALUES ('$name', '$email', '$phone_number', '$university', '$degree', '$course', '$year', '$scheme')";
 
 	$result = mysql_query($query);
+
+
+
+
+$message = '
+<html>
+<head>
+  <title>JP Morgan: Thank You!</title>
+</head>
+<body>
+  <p>Thank you for entering your information into our Student Recruitment application.</p>
+  <p>For more information about the current opportunities, please follow this link: </p>
+  <p> <b> http://techcareers.jpmorgan.com/index.html </b> </p>
+</body>
+</html>
+';
+
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Additional headers
+
+$headers .= 'From: JP Morgan' . "\r\n";
+
+
+   $retval = mail ($email,$scheme,$message,$headers);
+   if( $retval == true )  
+   {
+      echo "Message sent successfully...";
+   }
+   else
+   {
+      echo "Message could not be sent...";
+   }
+
 	header("location:index.html");
 	//show error if query fails.
 	if (!$result) {
@@ -33,21 +75,7 @@ if (count($_POST) > 0) {
 	//close the connection
 }
 ?>
-<script>
-function phonenumber(inputtxt)  
-{  
-  var phoneno = /^\d{11}$/;  
-  if(inputtxt.value.match(phoneno))  
-  {  
-      return true;  
-  }  
-  else  
-  {  
-     alert("Not a valid Phone Number");  
-     return false;  
-  }  
-  }
-</script>
+
 
 <html class= "detailsForm">
 	<head>
@@ -63,58 +91,62 @@ function phonenumber(inputtxt)
 		<title>JPMorgan Recruitment</title>
 	</head>
 	<body>
-		
+
 		<form id=studentinfo class="app" action="details.php" method= "post" >
-			<h1> JP Morgan <br> Student Recruitment Application </h1>
+			<h1> JP Morgan
+			<br>
+			Student Recruitment Application </h1>
 			<p>
 				Please enter the required information below. We will keep you informed of upcoming events.
 			</p>
 			<p>
-				<button type="reset" value="Reset">Reset</button>
+				<button type="reset" value="Reset">
+					Reset
+				</button>
 			</p>
 			<fieldset>
 				<legend>
 					Contact Details
 				</legend>
-				
+
 				<br>
-				
+
 				<label for="name">Name:</label>
 				<input type="text" name="name" id="name" placeholder= "James Morgan" required>
-				
+
 				<br>
-				
+
 				<label for="email">Email:</label>
 				<input type="email" name="user_email" id="email" placeholder="james@uni.com"  required>
-				
+
 				<br>
-				
+
 				<label for="phonenumber">Phone Number:</label>
 				<input type="tel" name="phonenumber" id="phonenumber" placeholder="07123456789"  required>
-				</fieldset>
+			</fieldset>
 			<br>
 			<fieldset>
 				<legend>
 					University Information
 				</legend>
-				
+
 				<br>
-				
+
 				<label for="university">University:</label>
 				<input type="text" name="university" id="university" placeholder= "University of Strathclyde" required>
-				
+
 				<br>
-				
+
 				<label for="degree">Degree:</label>
 				<input type="text" name="degree" id="degree" placeholder= "MEng" required>
-				
+
 				<br>
-				
+
 				<label for="course">Course:</label>
 				<input type="text" name="course" id="course" placeholder= "Computer Science" required>
-				
+
 				<br>
-				
+
 				<label for="year">Year of Study:</label>
 				<select id= "year" name= "year" required>
 					<option value= "1st">1st Year</option>
@@ -124,11 +156,13 @@ function phonenumber(inputtxt)
 					<option value= "5th">5th Year</option>
 				</select>
 			</fieldset>
-			
+
 			<br>
-			
+
 			<fieldset>
-				<legend> Schemes Available in Technology</legend>
+				<legend>
+					Schemes Available in Technology
+				</legend>
 				<label for="schemeSelection">Choose a scheme:</label>
 				<select id = "schemeSelection" name= "scheme" required>
 					<option value = "1">Technology Graduate Scheme</option>
@@ -137,10 +171,12 @@ function phonenumber(inputtxt)
 					<option value = "4">Open Technology Position</option>
 				</select>
 			</fieldset>
-			
+
 			<br>
-			
-				<button type="submit" value="Submit" onclick="phonenumber(studentinfo.phonenumber)">Submit your Details </button>
+
+			<button type="submit" value="Submit" onclick="phonenumber(studentinfo.phonenumber)">
+				Submit your Details
+			</button>
 
 		</form>
 		<footer>
