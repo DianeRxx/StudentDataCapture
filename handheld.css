@@ -36,6 +36,26 @@ form#quiz label {
 	font-weight: normal;
 }
 
+.quizResults {
+	background: RGB(225, 39, 39);
+}
+
+.quizResults body {
+	background: RGB(241, 162, 56);
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #000000;
+	text-align: center;
+}
+
+.quizResults p {
+	color: #000000;
+	font-weight: bold;
+}
+
+
+
 .infoPage {
 	background: RGB(225, 39, 39);
 }
@@ -51,6 +71,14 @@ form#quiz label {
 	overflow: hidden;
 	text-align: center;
 	width: 100%;
+}
+
+.infoPage fieldset {
+	background: rgb(241, 162, 56);
+	color: #000000;
+	border: 5px solid #FFFFFF;
+	font-size: 16px;
+	font-weight: normal;
 }
 
 .infoPage ul, li {
@@ -82,9 +110,8 @@ form#quiz label {
 	text-align: center;
 }
 
-h1, p {
-	color: #FFFF33;
-	*text-align: center;
+.homepage p {
+	text-align: center;
 }
 
 a.Graduate {

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 
 
-		<title>HTML</title>
+		<title>Test Your Skills</title>
 		<meta name="description" content="">
 		<meta name="author" content="Diane Ramsay">
 
