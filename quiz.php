@@ -332,7 +332,7 @@
 
 			<footer>
 				<p>
-					<a href= "index.html">Back To Homepage</a>
+					<a href= "index.html" target="_blank">Back To Homepage</a>
 				</p>
 			</footer>
 		</div>

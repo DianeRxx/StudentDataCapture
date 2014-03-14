@@ -21,12 +21,17 @@ if (count($_POST) > 0) {
 
 	if ($scheme==1) {
 		$scheme= "Technology Graduate Scheme";
+		$link= "http://techcareers.jpmorgan.com/techcareers/jpmorgan/careers/europe/tech/opportunities/graduate"; 
 	} else if ($scheme==2){
 		$scheme= "Spring Technology Week";
+		$link= "http://techcareers.jpmorgan.com/techcareers/jpmorgan/careers/europe/tech/opportunities/preintern/springweek";
 	} else if ($scheme==3) {
 		$scheme = "Technology Internship";
-	} else $scheme= "Open Technology Position";
-					
+		$link= "http://techcareers.jpmorgan.com/techcareers/jpmorgan/careers/europe/tech/opportunities/internship";
+	} else {
+		 $scheme= "Open Technology Position";
+		$link= "http://techcareers.jpmorgan.com/index.html";
+	}
 	$query = "INSERT INTO studentDetails (full_name, email, phone_number, university, degree, course, year, preferred_scheme) VALUES ('$name', '$email', '$phone_number', '$university', '$degree', '$course', '$year', '$scheme')";
 
 	$result = mysql_query($query);
@@ -42,7 +47,7 @@ $message = '
 <body>
   <p>Thank you for entering your information into our Student Recruitment application.</p>
   <p>For more information about the current opportunities, please follow this link: </p>
-  <p> <b> http://techcareers.jpmorgan.com/index.html </b> </p>
+  <p> <b>' . $link . ' </b> </p>
 </body>
 </html>
 ';
@@ -174,14 +179,14 @@ $headers .= 'From: JP Morgan' . "\r\n";
 
 			<br>
 
-			<button type="submit" value="Submit" onclick="phonenumber(studentinfo.phonenumber)">
+			<button type="submit" value="Submit">
 				Submit your Details
 			</button>
 
 		</form>
 		<footer>
 			<p>
-				<a href= "index.html">Back To Homepage</a>
+				<a href= "index.html" target="_blank">Back To Homepage</a>
 			</p>
 		</footer>
 	</body>
