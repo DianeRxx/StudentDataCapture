@@ -30,6 +30,7 @@ if ($BAanswer4 == "C") { $BAtotalCorrect++;
 }
 
 $bestJob= "Business Analyst";
+$bestScore= $BAtotalCorrect;
 
 //Checking answers for AD questions
 $ADtotalCorrect = 0;
@@ -43,10 +44,11 @@ if ($ADanswer3 == "D") { $ADtotalCorrect++;
 if ($ADanswer4 == "A") { $ADtotalCorrect++;
 }
 
-if($ADtotalCorrect > $BAtotalCorrect){
+if($ADtotalCorrect > $bestScore){
 	$bestJob= "Application Development";
-} else if ($ADtotalCorrect == $BAtotalCorrect){
-	$bestJob= $bestJob + " or Application Development";
+	$bestScore= $ADtotalCorrect;
+} else if ($ADtotalCorrect == $bestScore){
+	$bestJob= $bestJob . " or Application Development";
 }
 
 //Checking answers for SA questions
@@ -61,10 +63,10 @@ if ($SAanswer3 == "C") { $SAtotalCorrect++;
 if ($SAanswer4 == "B") { $SAtotalCorrect++;
 }
 
-if($SAtotalCorrect > $ADtotalCorrect){
+if($SAtotalCorrect > $bestScore){
 	$bestJob= "Software Architecture";
-} else if ($ADtotalCorrect == $BAtotalCorrect){
-	$bestJob= $bestJob + " or Software Architecture";
+} else if ($SAtotalCorrect == $bestScore){
+	$bestJob= $bestJob . " or Software Architecture";
 }
 
 
@@ -73,19 +75,22 @@ $totalScore= $BAtotalCorrect + $ADtotalCorrect + $SAtotalCorrect;
 }
 ?>
 
+<!DOCTYPE html>
 <html class= "quizResults">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<title>Your Quiz Results</title>"Results of the quiz and a job recommendation">
+		<meta name="author" content="Diane Ramsay">
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=yes">
 
 		<link rel="stylesheet" type="text/css" href="handheld.css" />
-		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-
-		<title>JP Morgan Recruitment</title>
+		<link rel="apple-touch-icon" href="logo.png" />
+		<link rel="apple-touch-icon-precomposed" href="logo.png" />
 	</head>
+	<!-- This is the results page of the quiz where the user can view their score from the quiz.
+		A suitable job role will also be displayed to them.  -->
 	<body>
 		<h1>Your scores from the quiz were as follows: </h1><br>
 		<h2>System Design and Analysis: </h2>
@@ -104,7 +109,7 @@ $totalScore= $BAtotalCorrect + $ADtotalCorrect + $SAtotalCorrect;
 
 		<footer>
 				<p>
-					<a href= "index.html" target="_blank">Back To Homepage</a>
+					<a href= "index.html" >Back To Homepage</a>
 				</p>
 			</footer>
 	</body>

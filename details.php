@@ -52,11 +52,10 @@ $message = '
 </html>
 ';
 
-// To send HTML mail, the Content-type header must be set
+
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-// Additional headers
 
 $headers .= 'From: JP Morgan' . "\r\n";
 
@@ -72,29 +71,30 @@ $headers .= 'From: JP Morgan' . "\r\n";
    }
 
 	header("location:index.html");
-	//show error if query fails.
 	if (!$result) {
 		die('Invalid query: ' . mysql_error());
 	}
 	mysql_close($mydb);
-	//close the connection
 }
 ?>
 
-
+<!DOCTYPE html>
 <html class= "detailsForm">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<title>JP Morgan Student Recruitment</title>
+		<meta name="description" content="Student Details form">
+		<meta name="author" content="Diane Ramsay">
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=yes">
 
 		<link rel="stylesheet" type="text/css" href="handheld.css" />
-		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<title>JPMorgan Recruitment</title>
+		<link rel="apple-touch-icon" href="logo.png" />
+		<link rel="apple-touch-icon-precomposed" href="logo.png" />
 	</head>
+	<!-- This is the page where a user can enter their information into the form which will then be sent
+		to JP Morgan. -->
 	<body>
 
 		<form id=studentinfo class="app" action="details.php" method= "post" >
@@ -102,7 +102,8 @@ $headers .= 'From: JP Morgan' . "\r\n";
 			<br>
 			Student Recruitment Application </h1>
 			<p>
-				Please enter the required information below. We will keep you informed of upcoming events.
+				Please enter all of the information below. After you have submitted your details, you will receive
+				an automated email with some more information about the job scheme you selected. 
 			</p>
 			<p>
 				<button type="reset" value="Reset">
@@ -116,18 +117,18 @@ $headers .= 'From: JP Morgan' . "\r\n";
 
 				<br>
 
-				<label for="name">Name:</label>
-				<input type="text" name="name" id="name" placeholder= "James Morgan" required>
+				<label for="name">Full Name:</label> <br>
+				<input type="text" name="name" id="name" placeholder= "James Morgan" pattern="^([a-zA-Z]+[\'\,\.\-]?[a-zA-Z ]*)+[ ]([a-zA-Z]+[\'\,\.\-]?[a-zA-Z ]+)+$" title="Please enter your first name and last name separated by a space. For example: James Morgan" required>
 
 				<br>
 
-				<label for="email">Email:</label>
-				<input type="email" name="user_email" id="email" placeholder="james@uni.com"  required>
+				<label for="email">Email:</label> <br>
+				<input type="email" name="user_email" id="email" placeholder="james@uni.com" title="Please enter a valid email address including an @. For example: james@uni.com"  required>
 
 				<br>
 
-				<label for="phonenumber">Phone Number:</label>
-				<input type="tel" name="phonenumber" id="phonenumber" placeholder="07123456789"  required>
+				<label for="phonenumber">Phone Number:</label> <br>
+				<input type="tel" name="phonenumber" id="phonenumber" placeholder="07123456789" pattern="^((\+44\s?\d{4}|\(?\d{5}\)?)\s?\d{6})|((\+44\s?|0)7\d{3}\s?\d{6})$" title="Please enter a phone number containing 11 numbers, starting with 0 or +44"  required>
 			</fieldset>
 			<br>
 			<fieldset>
@@ -137,22 +138,46 @@ $headers .= 'From: JP Morgan' . "\r\n";
 
 				<br>
 
-				<label for="university">University:</label>
-				<input type="text" name="university" id="university" placeholder= "University of Strathclyde" required>
+				<label for="university">University:</label> <br>
+				<input type="text" name="university" id="university" placeholder= "University of Strathclyde" list="scotlandUnis" pattern="^[a-zA-Z\s.\-]+$" title="Please enter letter characters only" required>
+				<datalist id="scotlandUnis">
+					<option value="University of Strathclyde"/>
+					<option value="University of Glasgow"/>
+					<option value="Glasgow Caledonian University"/>
+					<option value="University of Edinburgh"/>
+					<option value="University of St Andrews"/>
+					<option value="University of Dundee"/>
+					<option value="University of Aberdeen"/>
+					<option value="University of Stirling"/>
+					<option value="Edinburgh Napier University"/>
+					<option value="Heriot-Watt University"/>
+					<option value="University of the West of Scotland"/>
+					<option value="Robert Gordon University"/>
+				</datalist>
+				<br>
+
+				<label for="degree">Degree:</label> <br>
+				<input type="text" name="degree" id="degree" placeholder= "MEng" list="degreeOptions" pattern="^[a-zA-Z\s.\-]+$" title="Please enter letter characters only" required>
+				<datalist id="degreeOptions">
+					<option value="MEng"/>
+					<option value="BSc"/>
+					<option value="MSc"/>
+				</datalist>
+				<br>
+
+				<label for="course">Course:</label> <br>
+				<input type="text" name="course" id="course" placeholder= "Computer Science" list="courseOptions" pattern="^[a-zA-Z\s.\-]+$" title="Please enter letter characters only" required>
+				<datalist id="courseOptions">
+					<option value="Computer Science"/>
+					<option value="Software Engineering"/>
+					<option value="Computer and Electrical Systems"/>
+					<option value="Business Information Systems"/>
+					<option value="Computer Engineering"/>
+				</datalist>
 
 				<br>
 
-				<label for="degree">Degree:</label>
-				<input type="text" name="degree" id="degree" placeholder= "MEng" required>
-
-				<br>
-
-				<label for="course">Course:</label>
-				<input type="text" name="course" id="course" placeholder= "Computer Science" required>
-
-				<br>
-
-				<label for="year">Year of Study:</label>
+				<label for="year">Year of Study:</label> <br>
 				<select id= "year" name= "year" required>
 					<option value= "1st">1st Year</option>
 					<option value = "2nd">2nd Year</option>
@@ -168,7 +193,7 @@ $headers .= 'From: JP Morgan' . "\r\n";
 				<legend>
 					Schemes Available in Technology
 				</legend>
-				<label for="schemeSelection">Choose a scheme:</label>
+				<label for="schemeSelection">Choose a scheme:</label> <br>
 				<select id = "schemeSelection" name= "scheme" required>
 					<option value = "1">Technology Graduate Scheme</option>
 					<option value = "2">Spring Technology Week</option>
@@ -186,7 +211,7 @@ $headers .= 'From: JP Morgan' . "\r\n";
 		</form>
 		<footer>
 			<p>
-				<a href= "index.html" target="_blank">Back To Homepage</a>
+				<a href= "index.html" >Back To Homepage</a>
 			</p>
 		</footer>
 	</body>

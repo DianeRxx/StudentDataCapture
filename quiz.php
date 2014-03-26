@@ -1,21 +1,19 @@
-
+<!DOCTYPE html>
 <html lang="en" class="quiz">
 	<head>
 		<meta charset="utf-8">
 
-
-		<title>Test Your Skills</title>
-		<meta name="description" content="">
+		<title>Skills Job Matcher</title>
+		<meta name="description" content="Check your skills to receive a job recommendation">
 		<meta name="author" content="Diane Ramsay">
-
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=yes">
 
 		<link rel="stylesheet" type="text/css" href="handheld.css" />
-
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="logo.png" />
+		<link rel="apple-touch-icon-precomposed" href="logo.png" />
 	</head>
-
+<!-- This is the quiz page of the application where users can answer the questions then submit their answers for marking. -->
 	<body>
 		<div>
 			<header>
@@ -70,7 +68,7 @@
 
 						<div>
 							<input type="radio" name="BA_q2" id="BA_q2a3" value="C" />
-							<label for="BA_q1a3">C) It captures the responsibility of the system to its users</label>
+							<label for="BA_q2a3">C) It captures the responsibility of the system to its users</label>
 						</div>
 
 						<div>
@@ -332,7 +330,7 @@
 
 			<footer>
 				<p>
-					<a href= "index.html" target="_blank">Back To Homepage</a>
+					<a href= "index.html" >Back To Homepage</a>
 				</p>
 			</footer>
 		</div>

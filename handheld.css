@@ -55,7 +55,6 @@ form#quiz label {
 }
 
 
-
 .infoPage {
 	background: RGB(225, 39, 39);
 }
@@ -175,25 +174,30 @@ form#studentinfo legend {
 form#studentinfo label {
 	color: #000000;
 	font-weight: bold;
+	width: 100%;
 }
 
 form#studentinfo input, select, button {
-	-webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
-	-moz-box-sizing: border-box; /* For all Gecko based browsers */
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 80%
+}
+
+form#studentinfo button {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
 	box-sizing: border-box;
 }
 
 .button {
-	/*adjust the roundness*/
 	border-radius: 4px;
 	moz-border-radius: 4px;
 	webkit-border-radius: 4px;
-	/*adjust height and width*/
 	margin-left: auto;
 	margin-right: auto;
 	height: 40px;
-	width: 40px;
-	/*change border colour*/
+	width: 60px;
 	border: 1px #245ec6 solid;
 }
 
